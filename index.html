@@ -1,0 +1,192 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TelenorPG</title>
+	<link rel="stylesheet" href="themes/whileBllueTheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+       <!---------------------- LOGIN PAGE -------------------------->
+	<div data-role="page" data-theme="a" data-url="login">
+		<div data-role="header" data-position="inline">
+			<h1>Login</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+		</div>
+		<div data-role="content" data-theme="a">
+		<form>
+		     <input  type="text" name="text-basic" id="text-basic" value="" placeholder="Email">
+			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off">
+			 <a href="#register" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" >login</a>
+		</form>    
+		</div>
+	</div>
+	
+	    <!--------------- REGISTER PAGE ---------------------------->	
+	<div data-role="page" data-theme="a" data-url="register" >
+		<div data-role="header" data-position="inline">
+			<h1>Register</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+		</div>
+		<div data-role="content" data-theme="a">	
+			<form>
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Email" >
+			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off">
+			 <input type="password" name="password" id="password" value="" placeholder="Repeat Password" autocomplete="off">
+			 <input type="text" name="text-basic" id="text-basic" value="" placeholder="Mobile">
+			 <a href="#addbaby" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Register</a>
+			</form>
+		</div>
+	</div>
+	
+	    <!-------------------- ADD BABY PAGE ----------------------------->	
+	<div data-role="page" data-theme="a" data-url="addbaby" >
+		<div data-role="header" data-position="inline">
+			<h1>Add Baby</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+			<form>
+             <label for="date">Date of Birth</label>                            
+             <input type="date" name="date" id="date" value="" placeholder="Date of Birth">
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Name" >
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Address" >
+			 <select name="select-choice-mini" id="select-choice-mini"  >
+			    <option value="Male">Male</option>
+			    <option value="Female">Female</option>
+			    <option value="Not Specified">Not Specified</option>
+			 </select>
+			 <a href="#addsource" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Add</a>
+			 </form>
+		</div>
+	</div>	
+	
+	    <!------------------------- ADD Location/Source PAGE ---------------------------->	
+	<div data-role="page" data-theme="a" data-url="addsource" >
+		<div data-role="header" data-position="inline">
+			<h1>Add Source</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+		<form>
+            <label for="select-choice-mini">Location Type</label>            
+			 <select name="select-choice-mini" id="select-choice-mini"  >
+			    <option value="Male">School</option>
+			    <option value="Female">Hospital</option>
+			    <option value="Not Specified">Daycare</option>
+			 </select>	            
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Location Name" >		 
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Address" >
+			 <input type="text" name="text-basic" id="text-basic" value="" placeholder="Contact" >
+			 <a href="#invite" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Add Location</a>
+		</form>	 
+		</div>
+	</div>		
+	
+	    <!----------------------- INVITE GUARDIAN PAGE-------------------------->	
+	<div data-role="page" data-theme="a" data-url="invite" >
+		<div data-role="header" data-position="inline">
+			<h1>Invite Guardian</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+			<form>
+		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Email" >
+			 <a href="#vaccine" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Invite</a>
+			 </form>
+		</div>
+	</div>		
+    
+	    <!---------------------- Vaccination History PAGE-------------------->	
+	<div data-role="page" data-theme="a" data-url="vaccine" >
+		<div data-role="header" data-position="inline">
+			<h1>Vaccination Details</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<form>
+        <label for="select-choice-mini">Select baby</label>
+        <select multiple="multiple" data-native-menu="false"  name="select-choice-mini" id="select-choice-mini"  >
+			    <option value="baby1">Zain</option>
+			    <option value="baby2">Hadi</option>
+        </select>
+		<table data-role="table" data-mode="columntoggle" data-theme="a" class="ui-responsive">		
+		     <thead>
+        <tr>
+          <th>Vaccine</th>
+          <th data-priority="1">Due Date</th>
+          <th data-priority="1">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Polio</td>
+          <td>15-Sep-2015</td>
+          <td>Done</td>
+        </tr>
+        <tr>
+          <td>PCV</td>
+          <td>14-Sep-2015</td>
+          <td>To Be Done</td>
+        </tr>
+        <tr>
+          <td>BCG</td>
+          <td>25-Sep-2015</td>
+          <td>To Be Done</td>
+        </tr>      
+        <tr>
+          <td>HIb</td>
+          <td>14-June-2015</td>
+          <td>To Be Done</td>
+        </tr>
+        <tr>
+          <td>MMR</td>
+          <td>01-Apr-2015</td>
+          <td>To Be Done</td>
+        </tr>            
+		</table>
+        <a href="#menu" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Back</a>
+		</form>
+	</div>	
+    
+    
+<!-- LOCATIONS PAGE 
+<div data-role="tabs" id="tabs">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#one" data-ajax="false">Schools</a></li>
+      <li><a href="#two" data-ajax="false">Hospitals</a></li>
+      <li><a href="three" data-ajax="false">Daycare</a></li>
+    </ul>
+  </div>
+  <div id="one" >
+      schools
+  </div>
+  <div id="two">
+      hospitals
+  </div>
+  <div id="three">
+      daycare
+  </div>    
+</div>    
+  -->
+   
+        <!------------------------MENU PANEL -----------------------------------> 
+    <div data-role="page" data-display="push" data-theme="a" id="nav-panel" data-url="menu">
+		<div data-role="header" data-position="inline">
+			<h1>Main Menu</h1>
+		</div>        
+        <ul data-role="listview" data-theme="a">
+            <li data-icon="home"><a href="#notifications" data-rel="close">Home</a></li>
+            <li data-icon="mail"><a href="#invite">Invite Parent</a></li>
+            <li data-icon="location"><a href="#locations">Locations</a></li>
+            <li data-icon="lock"><a href="#login">Login</a></li>
+            <li data-icon="plus"><a href="#addbaby">Add Child</a></li>
+            <li data-icon="bullets"><a href="#vaccine">Vaccination</a></li>
+        </ul>
+    </div> 
+	
+</body>
+</html>
