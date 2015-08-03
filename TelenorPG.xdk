@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "ca762725-907b-4406-85c9-7ed51974b8b3",
-      "lastModifiedDate": 1438164480214,
+      "lastModifiedDate": 1438253787976,
       "creationDate": 1438145413188
     },
     "sourceDirectory": "",
@@ -129,7 +129,7 @@
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "TelenorPG",
         "appID_": "not.yet.specified",
         "appAccess_": [
@@ -154,7 +154,7 @@
           "ios-target": "6",
           "ios-configuration": "adhoc"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "TelenorPG",
         "appID_": "not.yet.specified",
         "appAccess_": [
@@ -175,7 +175,7 @@
         "runtime_": "Cordova 3.x",
         "name_": "Windows8",
         "preferences_": {},
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "TelenorPG",
         "appID_": "not.yet.specified",
         "appAccess_": [
