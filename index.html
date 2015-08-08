@@ -11,21 +11,22 @@
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/config.js"></script>
 	<script src="js/scripts.js"></script>
+    
+   
 </head>
 <body>
        <!---------------------- LOGIN PAGE -------------------------->
 	<div id="pageone" data-role="page" data-theme="a" data-url="login">
 		<div data-role="header" data-position="inline">
 			<h1>Login</h1>
-            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
 		</div>
 		<div data-role="content" data-theme="a">
 		<form>
-		     <input type="text" name="text-basic" id="username" value="" placeholder="Email">
-			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off">
-             <input id="submit" type="submit" class="ui-btn ui-icon-delete ui-btn-icon-left" value="login">   
+		     <input type="text" name="text-basic" id="username" value="" placeholder="Email" required>
+			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off" required>
+             <input id="submit" type="submit" class="ui-btn ui-icon-delete ui-btn-icon-left" value="Login">   
 		</form>   
-            
+<a href="#pagetwo" class="ui-btn">Register</a>                
 		</div>
 	</div>
 	
@@ -33,18 +34,53 @@
 	<div id="pagetwo" data-role="page" data-theme="a" data-url="register" >
 		<div data-role="header" data-position="inline">
 			<h1>Register</h1>
-            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
 		</div>
 		<div data-role="content" data-theme="a">	
-			<form>
-             <input type="text" name="text-basic" id="text-basic" value="" placeholder="Full Name" >
-		     <input type="text" name="text-basic" id="text-basic" value="" placeholder="Email" >
-			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off">
-			 <input type="password" name="password" id="password" value="" placeholder="Repeat Password" autocomplete="off">
-			 <input type="text" name="text-basic" id="text-basic" value="" placeholder="Mobile">
+			<form autocomplete="off">
+             <input type="text" name="fullname" id="fullname" value="" placeholder="Full Name" required>
+		     <input type="email" name="registeremail" id="registeremail" value="" placeholder="Email" required >
+			 <input type="password" name="registerpassword" id="registerpassword" value="" placeholder="Password" autocomplete="off" required>
+			 <input type="password" name="confirmpassword" id="confirmpassword" value="" placeholder="Repeat Password" autocomplete="off">
+			 <input type="number" name="text-basic" id="text-basic" value="" placeholder="Mobile" >
              <input id="register" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="register">
             </form>
-    <input id="logout" type="submit" onclick="clearSession();" class="ui-btn ui-icon-delete ui-btn-icon-left" value="logout">    
+      
+                        
+            
+		</div>
+	</div>
+    
+    	    <!--------------- REGISTER PAGE ---------------------------	
+	<div id="pagetwo" data-role="page" data-theme="a" data-url="register" >
+		<div data-role="header" data-position="inline">
+			<h1>Register</h1>
+		</div>
+		<div data-role="content" data-theme="a">	
+			<form autocomplete="off">
+             <input type="text" name="text-basic" id="fullname" value="" placeholder="Full Name" required>
+		     <input type="email" name="text-basic" id="email" value="" placeholder="Email" >
+			 <input type="password" name="password" id="password" value="" placeholder="Password" autocomplete="off" required>
+
+			 <input type="number" name="text-basic" id="text-basic" value="" placeholder="Mobile" min="9" max="20">
+             <input id="register" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="register">
+            </form>   
+		</div>
+	</div>
+    
+        	    <!--------------- PROFILE PAGE ---------------------------->	
+	<div id="pagefifteen" data-role="page" data-theme="a" data-url="profile" >
+		<div data-role="header" data-position="inline">
+			<h1>My Profile</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>  
+		</div>
+		<div data-role="content" data-theme="a">	
+			<form autocomplete="off">
+             <input type="text" name="profilefullname" id="profilefullname" value="" placeholder="Full Name" required>
+		     <input type="email" name="profileemail" id="profileemail" value="" placeholder="Email" readonly="readonly" >		              <input type="text" name="profilemobile" id="profilemobile" value="" placeholder="Mobile" min="11" max="11">                     <select data-native-menu="false" name="profilelocation" id="profilelocation">
+               <option>Select Location</option>
+			 </select>
+             <input id="updateprofile" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Save">
+            </form>   
 		</div>
 	</div>
 	
@@ -56,20 +92,52 @@
 		</div>
 		<div data-role="content" data-theme="a">	
 			<form>
-		     <input type="text" name="text-basic" id="name" value="" placeholder="Name" >                
+		     <input type="text" name="text-basic" id="name" value="" placeholder="Name" required>                
              <label for="date">Date of Birth</label>                            
-             <input type="date" name="date" id="dob" value="" placeholder="Date of Birth">
-			 <select name="select-choice-mini" id="gender"  >
+             <input type="date" name="date" id="dob" value="" placeholder="Date of Birth" required>
+			 <select data-native-menu="false" name="select-choice-mini" id="gender"  >
+               <option >Gender</option>
 			    <option value="Male">Male</option>
 			    <option value="Female">Female</option>
-			    <option value="Not Specified">Not Specified</option>
 			 </select>
+                <select  data-native-menu="false"  name="select-choice-mini" id="relationshipwithbaby" >
+			    <option value="">Relation with Child</option>	
+                 <option value="Father">Father</option>
+			    <option value="Mother">Mother</option>
+                <option value="Uncle">Uncle</option>
+                <option value="Aunty">Aunty</option>
+			    <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                 <option value="Other">Other</option>                 
+            </select> 
 		     <input type="text" name="text-basic" id="remarks" value="" placeholder="Remarks" >                
-             <input id="addchild" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="add baby">
+             <input id="addchild" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Baby">
+<a href="#viewchilds" class="ui-btn">View Baby</a>                
             </form>
 		</div>
 	</div>	
 	
+  <!--------------------VIEW ALL CHILDREN -------------->  
+<div id="pagesixteen" data-role="page" data-theme="a" data-url="viewchilds">
+        <div data-role="header" data-position="inline">
+            <h1>View Babies</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+        <div data-role="content" data-theme="a">
+            <table data-role="table" data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="viewchilds">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>DOB</th>
+                        <th>Relation</th>
+                        <th>Added By</th>
+                    </tr>
+                </thead>
+                <tbody>
+            </table>
+        </div>
+    </div>    
+    
 	    <!------------------------- ADD Service ---------------------------->	
 	<div id="pagefour" data-role="page" data-theme="a" data-url="addservice" >
 		<div data-role="header" data-position="inline">
@@ -77,14 +145,35 @@
             <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
 		</div>
 		<div data-role="content" data-theme="a">	
-		<form>
-		     <input type="text" name="text-basic" id="servicename" value="" placeholder="Service Name" >		 
-		     <input type="text" name="text-basic" id="serviceforage" value="" placeholder="Service for Age" >
+		<form>                                     
+		  <input type="text" name="text-basic" id="servicename" value="" placeholder="Service Name" required>   
+                      
+<fieldset>
+  <legend>Select Child Age (Month)</legend>            
+<input type="range" name="slider-2" data-highlight="true" id="serviceformonth" value="5" min="1" max="11">
+ </fieldset>           
+            
+ <fieldset>
+  <legend>Select Child Age (Year)</legend>  
+  <input type="range" name="slider-2" data-highlight="true" id="serviceforyear" value="2" min="0" max="4">            
+ </fieldset>
+                                             
+             <select  data-native-menu="false"  name="select-choice-mini" id="organisationid" >
+			    <option >Select Organization</option>
+			    <option value="2">id2</option>
+            </select>                                                 
+             <select  data-native-menu="false"  name="select-choice-mini" id="categoryid" >
+			    <option value="1">cid1</option>
+			    <option value="2">cid2</option>
+            </select>             
              <input type="text" name="text-basic" id="description" value="" placeholder="Description" >
-<input id="addservice" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Location">
+<input id="addservice" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Service">
             </form>	 
 		</div>
 	</div>		
+  
+    
+    
     
     
 	    <!------------------------- ADD Org ---------------------------->	
@@ -95,11 +184,14 @@
 		</div>
 		<div data-role="content" data-theme="a">	
 		<form>
-		     <input type="text" name="text-basic" id="organisationname" value="" placeholder="Org Name" >		 
+		     <input type="text" name="text-basic" id="organisationname" value="" placeholder="Org Name" required>		 
 		     <input type="text" name="text-basic" id="address" value="" placeholder="Org Address" >
-             <input type="text" name="text-basic" id="contactno" value="" placeholder="Contact no" >
-            <input type="text" name="text-basic" id="email" value="" placeholder="email" >
+             <input type="number" name="text-basic" id="contactno" value="" placeholder="Contact no" min="9" max="20" required>
+             <input type="text" name="text-basic" id="email" value="" placeholder="email" required>
 <input id="addorg" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Org">
+        
+<a href="#allorg" class="ui-btn">View Organizations</a>                
+            
             </form>	 
 		</div>
 	</div>	    
@@ -114,15 +206,24 @@
 		</div>
 		<div data-role="content" data-theme="a">	
 			<form>
-		     <input type="text" name="text-basic" id="email2" value="" placeholder="Email" >
-             <select multiple="multiple" data-native-menu="false"  name="select-choice-mini" id="relationshipwithchild" >
-			    <option value="Father">Father</option>
+		     <input type="email" name="text-basic" id="email2" value="" placeholder="Email" >
+             <select  data-native-menu="false"  name="select-choice-mini" id="relationshipwithchild" >
+			    <option value="">Relation with Child</option>	
+                 <option value="Father">Father</option>
 			    <option value="Mother">Mother</option>
                 <option value="Uncle">Uncle</option>
+                <option value="Aunty">Aunty</option>
+			    <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                 <option value="Other">Other</option>                 
             </select>                
                 
-<input id="addinvite" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Invite Guardian">
+<input id="addinvite" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left " value="Invite Guardian">
+                
+<a href="#allinvite" class="ui-btn">Invited People</a>                
+
             </form>
+           
 		</div>
 	</div>		
     
@@ -132,18 +233,20 @@
 			<h1>Vaccination Details</h1>
             <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
 		</div>
+<div data-role="content" data-theme="a">	        
 		<form>
         <label for="select-choice-mini">Select baby</label>
-        <select multiple="multiple" data-native-menu="false"  name="select-choice-mini" id="select-choice-mini"  >
+        <select  data-native-menu="false"  name="select-choice-mini" id="select-choice-mini">
 			    <option value="baby1">Zain</option>
 			    <option value="baby2">Hadi</option>
         </select>
-		<table data-role="table" data-mode="columntoggle" data-theme="a" class="ui-responsive">		
-		     <thead>
+            
+<table data-role="table" border="1" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="" data-column-popup-theme="a">
+      <thead>
         <tr>
           <th>Vaccine</th>
-          <th data-priority="1">Due Date</th>
-          <th data-priority="1">Status</th>
+          <th >Due Date</th>
+          <th >Status</th>
         </tr>
       </thead>
       <tbody>
@@ -171,47 +274,211 @@
           <td>MMR</td>
           <td>01-Apr-2015</td>
           <td>To Be Done</td>
-        </tr>            
+        </tr>  
+            </tbody>  
 		</table>
         <a href="#menu" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-gear">Back</a>
 		</form>
+        </div>
+	</div>	
+    
+   
+	    <!-----------------------ADD LOCATIONS-------------------------->	
+	<div id="pageeight" data-role="page" data-theme="a" data-url="addlocation" >
+		<div data-role="header" data-position="inline">
+			<h1>Add Location</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+ 			<form>
+		     <input type="text" name="text-basic" id="location" value="" placeholder="Location" required>
+             <select  data-native-menu="false"  name="select-choice-mini" id="countryid" >
+			    <option value="1">Country</option>
+            </select>                  
+             <select  data-native-menu="false"  name="select-choice-mini" id="cityid" >
+			    <option value="1">City</option>
+            </select>                
+                
+<input id="addlocation" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Location">
+            </form>
+		</div>
 	</div>	
     
     
-<!-- LOCATIONS PAGE 
-<div data-role="tabs" id="tabs">
-  <div data-role="navbar">
-    <ul>
-      <li><a href="#one" data-ajax="false">Schools</a></li>
-      <li><a href="#two" data-ajax="false">Hospitals</a></li>
-      <li><a href="three" data-ajax="false">Daycare</a></li>
-    </ul>
-  </div>
-  <div id="one" >
-      schools
-  </div>
-  <div id="two">
-      hospitals
-  </div>
-  <div id="three">
-      daycare
-  </div>    
-</div>    
-  -->
+    <!-----------------------ADD SERVICEs LOCATIONS-------------------------->	
    
+	<div id="pageeleven" data-role="page" data-theme="a" data-url="addservicelocation" >
+		<div data-role="header" data-position="inline">
+			<h1>Add Service Location</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+ 			<form>
+            <select  data-native-menu="false"  name="select-choice-mini" id="serviceid" >
+			    <option value="1">Select Service</option>
+            </select> 
+                
+        
+            <select multiple   data-native-menu="false"  name="locationid" id="locationid" >
+            <option value="1"></option>
+            </select> 
+                     
+                
+<input id="addservicelocation" type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" value="Add Service Location">
+            </form>
+
+		</div>
+	</div>	     
+    
+    
+    
+ 	    <!-----------------------ALL ORGANIZATIONS-------------------------->	
+	<div id="pagenine" data-role="page" data-theme="a" data-url="allorg" >
+		<div data-role="header" data-position="inline">
+			<h1>All Organizations</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+
+    <table data-role="table"   data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="allorg">             
+          <thead>
+            <tr>
+              <th >Org Name</th>
+              <th >Contact</th>
+              <th >Email</th>
+            </tr>
+          </thead>
+          <tbody>
+        </table>            
+		</div>
+	</div>	    
+    
+   
+ 	    <!-----------------------ALL SERVICES-------------------------->	
+	<div id="pagethirteen" data-role="page" data-theme="a" data-url="allserve" >
+		<div data-role="header" data-position="inline">
+			<h1>Services</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+		<div data-role="content" data-theme="a">	
+        <a href="#addservice" class="ui-btn ui-icon-plus ui-btn-inline ui-btn-icon-right">New Service</a>    
+
+    <table data-role="table"   data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="allserve">        
+          <thead>
+            <tr>
+              <th>Org Name</th>
+              <th>Service Name</th>
+              <th>Year</th>
+            <th>Month</th>
+              <th >Category</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+        </tbody>
+        </table>            
+		</div>
+	</div>	    
+    
+    
+    
+ 	    <!-----------------------ALL SENT INVITATION-------------------------->	
+	<div id="pageten" data-role="page" data-theme="a" data-url="allinvite" >
+		<div data-role="header" data-position="inline">
+			<h1>Sent Invitation</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+        <div data-role="content" data-theme="a">
+
+    <table data-role="table"   data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="allinvite">             
+          <thead>
+            <tr>
+              <th >Sent To</th>
+              <th >Relation</th>
+              <th >Send Date</th>
+            </tr>
+          </thead>
+          <tbody>
+        </table>
+        </div>
+	</div>	     
+    
+   	    <!-----------------------VIEW ALL SERVICES LOCATIONS-------------------------- -->
+	<div id="pagetwelve" data-role="page" data-theme="a" data-url="alllocation" >
+		<div data-role="header" data-position="inline">
+			<h1>Services Locations</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+        <div data-role="content" data-theme="a">
+        <form>
+        <select  data-native-menu="false"  name="select-choice-mini" id="countryname" >
+			    <option value="">Select Country</option>            
+        </select>              
+        <select  data-native-menu="false"  name="select-choice-mini" id="cityname" >
+			    <option value="">Select City</option>            
+        </select>       
+        <select  data-native-menu="false"  name="select-choice-mini" id="services" >
+			    <option value="">Select Service</option>   
+        </select>               
+        </form>
+
+     <table data-role="table"   data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="allloc">             
+          <thead>
+            <tr>
+              <th>Lacations</th>
+              <th>Details</th>    
+            </tr>
+          </thead>
+          <tbody>
+        </table>            
+        </div>
+	</div>	  
+
+   	    <!-----------------------VIEW NOTIFICATIONS-------------------------- -->
+	<div id="pagefourteen" data-role="page" data-theme="a" data-url="notification" >
+		<div data-role="header" data-position="inline">
+			<h1>Notifications</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>            
+		</div>
+    <div data-role="content" data-theme="a">
+     <table data-role="table" data-mode="columntoggle:none" class="ui-body-d ui-shadow table-stripe ui-responsive"     data-column-btn-theme="a" data-column-btn-text="columns to show" data-column-popup-theme="a" id="notification">          
+          <thead>
+            <tr>
+              <th>Notifications</th>
+              <th>Date</th> 
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+        </table>            
+        </div>
+	</div>	  
+
+    
+    
         <!------------------------MENU PANEL -----------------------------------> 
     <div data-role="page" data-display="push" data-theme="a" id="nav-panel" data-url="menu">
 		<div data-role="header" data-position="inline">
 			<h1>Main Menu</h1>
 		</div>        
         <ul data-role="listview" data-theme="a">
-            <li data-icon="home"><a href="#notifications" data-rel="close">Home</a></li>
-            <li data-icon="mail"><a href="#addinvite">Invite Parent</a></li>
-            <li data-icon="plus"><a href="#addorg">Insert Organization</a></li>
             <li data-icon="plus"><a href="#addbaby">Add Child</a></li>
-            <li data-icon="plus"><a href="#addservice">Add Service</a></li>
-            <li data-icon="lock"><a href="#login">Login</a></li>          
-            <li data-icon="bullets"><a href="#vaccine">Vaccination</a></li>
+            <li data-icon="mail"><a href="#addinvite">Send Invitation</a></li>
+            <li data-icon="plus"><a href="#addorg">Organization</a></li>
+            <li data-icon="plus"><a href="#allserve">Services</a></li>
+            <li data-icon="bullets"><a href="#alllocation">Services Locations</a></li>  
+
+             <li data-icon="clock" ><a href="#notification">Notifications</a></li>
+             <li data-icon="clock" ><a href="#register">Register</a></li>
+            <li data-icon="clock" ><a href="#profile">My Profile</a></li>
+
+           <li data-icon="plus"><a href="#addlocation">Add Location</a></li>
+           <!--  <li data-icon="bullets"><a href="#vaccine">Vaccination</a></li>      
+            <li data-icon="bullets"><a href="#allorg">All Organizations</a></li>
+            <li data-icon="bullets"><a href="#alllocation">Services Locations</a></li>  
+            <li data-icon="bullets"><a href="#addservicelocation">Add Services Locations</a></li>  
+            <li data-icon="bullets"><a href="#allinvite">Sent Invitations</a></li>    -->
+            <li data-icon="lock"><a href="#logout" onclick="clearSession();">Logout</a></li>                    
         </ul>
     </div> 
 	

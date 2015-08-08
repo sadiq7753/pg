@@ -5,6 +5,9 @@
     "currentBuildConfiguration": "Android",
     "projectFiles": {},
     "projectDirectories": {},
-    "currentService": {}
+    "currentService": {
+      "endPoint": "1touch",
+      "service": "appmobi"
+    }
   }
 }
